@@ -20,5 +20,9 @@
   "prisma": {
     "seed": "yarn rw exec seed"
   },
-  "packageManager": "yarn@3.6.1"
+  "packageManager": "yarn@3.6.1",
+  "dependencies": {
+    "@react-three/fiber": "8.13",
+    "three": "0.153"
+  }
 }
