@@ -1,5 +1,40 @@
 # README
 
+**What I want to build**
+
+RobotWindow provides components for visualizing robot state. Initially, the focus is on providing debugging tools for mapping and navigation using a Viam Rover equipped with lidar.
+
+**More Detailed Description**
+
+Features
+* Uses Viam's TypeScript API to query a remote robot for sensor data using gRPC
+* See robot camera data and particle cloud using WebRTC
+* Visualize the robot's
+  * Odometry (estimated distance and rotation from starting position)
+  * Local and global costmaps (a robot's static and dynamic map of obstacles in the environment)
+  * Point cloud - 3D data generated using lidar
+  * Camera view
+  * POIs: waypoints that the robot can navigate to
+
+**Permissive License**
+MIT
+
+**Background (What made you decide to build this particular app? What inspired you?)**
+
+I worked for eight months maintaining and building an HMI (Human-Machine Interface) for Robotnik. The ROS (Robot Operating System) has tools such as rviz and Foxglove
+to debug and visualize sensor data, and ros3djs to build HMI's, but these tools do not yet exist for the new Viam framework.
+
+**How will you utilize RedwoodJS?**
+
+I will use:
+* Storyboard and rw's testing tools to create testable, resusable components
+* auth so users can keep private remote connection info private
+* cells for editing connection info
+* Prisma for storing this info
+
+**Additional Resources/Info**
+
+
 Welcome to [RedwoodJS](https://redwoodjs.com)!
 
 > **Prerequisites**
