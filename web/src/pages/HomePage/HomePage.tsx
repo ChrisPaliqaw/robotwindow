@@ -11,7 +11,12 @@ const HomePage = () => {
       <MetaTags title="Home" description="Home page" />
       <p>Robot Window</p>
       <>
-        <Canvas>
+        <Canvas
+          camera={{
+            fov: 60,
+            position: [-1, 1, 1],
+          }}
+        >
           <World />
         </Canvas>
       </>
