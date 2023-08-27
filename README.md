@@ -4,11 +4,11 @@
 
 **What I want to build**
 
-RobotWindow provides components for visualizing robot state. Initially, the focus is on providing debugging tools for mapping and navigation using a Viam Rover equipped with lidar.
+RobotWindow provides components for visualizing robot state. Initially, the focus is on providing debugging tools for mapping and navigation using a [Viam](https://viam.com) Rover equipped with lidar.
 
 **More Detailed Description**
 
-Features
+Planned features
 * Uses Viam's TypeScript API to query a remote robot for sensor data using gRPC
 * See robot camera data and particle cloud using WebRTC
 * Visualize the robot's
@@ -17,13 +17,14 @@ Features
   * Point cloud - 3D data generated using lidar
   * Camera view
   * POIs: waypoints that the robot can navigate to
+* Save configurations to the cloud
 
 **Permissive License**
 MIT
 
 **Background (What made you decide to build this particular app? What inspired you?)**
 
-I worked for eight months maintaining and building an HMI (Human-Machine Interface) for Robotnik. The ROS (Robot Operating System) has tools such as rviz and Foxglove
+I worked for eight months maintaining and building full-stack HMI's (Human-Machine Interface) for Robotnik. The ROS (Robot Operating System) has tools such as rviz and Foxglove
 to debug and visualize sensor data, and ros3djs to build HMI's, but these tools do not yet exist for the new Viam framework.
 
 **How will you utilize RedwoodJS?**
@@ -31,13 +32,13 @@ to debug and visualize sensor data, and ros3djs to build HMI's, but these tools 
 I will use:
 * Storyboard and rw's testing tools to create testable, resusable components
 * auth so users can keep private remote connection info private
-* cells for editing connection info
+* cells for editing connection info and configuration
 * Prisma for storing this info
 
 **Additional Resources/Info**
 
 
-Welcome to [RedwoodJS](https://redwoodjs.com)!
+This project uses [RedwoodJS](https://redwoodjs.com)
 
 > **Prerequisites**
 >
@@ -56,7 +57,7 @@ Then start the development server:
 yarn redwood dev
 ```
 
-Your browser should automatically open to [http://localhost:8910](http://localhost:8910) where you'll see the Welcome Page, which links out to many great resources.
+Your browser should automatically open to [http://localhost:8910](http://localhost:8910).  In front of the camera, you will see a model of a Viam Rover. The X, Y, and Z axes of the Rover are indicated
 
 > **The Redwood CLI**
 >
