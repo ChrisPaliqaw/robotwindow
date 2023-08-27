@@ -1,11 +1,12 @@
+import { RoundedBox } from '@react-three/drei'
+
 const Robot = () => {
   return (
-    <>
-      <mesh position={[0, 0.25, 0]}>
-        <boxBufferGeometry args={[1, 0.5, 1]} />
-        <meshStandardMaterial color="dimgray" />
-      </mesh>
-    </>
+    // Dimensions: L 32 cm x W 22 cm x H 7.5 cm
+    <mesh>
+      <boxGeometry args={[0.32, 0.075, 0.22]} />
+      <meshStandardMaterial color="dimgray" />
+    </mesh>
   )
 }
 

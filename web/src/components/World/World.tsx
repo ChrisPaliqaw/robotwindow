@@ -7,7 +7,7 @@ import Transform from '../Transform/Transform'
 const World = () => {
   return (
     <>
-      <OrbitControls />
+      <OrbitControls enableDamping={true} makeDefault />
       <directionalLight position={[1, 2, 3]} intensity={1.5} />
       <ambientLight intensity={0.25} />
       <Robot />

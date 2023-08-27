@@ -1,9 +1,7 @@
+import { TransformControls } from '@react-three/drei'
+
 const Transform = () => {
-  return (
-    <mesh>
-      <axesHelper args={[1]} />
-    </mesh>
-  )
+  return <TransformControls enabled={false} />
 }
 
 export default Transform
