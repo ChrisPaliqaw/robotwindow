@@ -1,5 +1,7 @@
 # README
 
+![Viam Rover close-up](viam_rover.png)
+
 **What I want to build**
 
 RobotWindow provides components for visualizing robot state. Initially, the focus is on providing debugging tools for mapping and navigation using a Viam Rover equipped with lidar.
