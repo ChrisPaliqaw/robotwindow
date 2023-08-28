@@ -1,4 +1,7 @@
-import { Cylinder } from '@react-three/drei'
+import { useEffect, useRef, useState } from 'react'
+
+import { Cylinder, Html } from '@react-three/drei'
+import * as THREE from 'three'
 
 /* Viam considers +X to be to the right, +Y to be forwards, and +Z to be up.
  * See https://docs.viam.com/services/frame-system/
@@ -11,8 +14,24 @@ function Transform() {
   const radius = 0.005
   const height = 0.3
   const radialSegments = 32
+
+  const groupRef = useRef()
+
+  const [x, setX] = useState()
+  const [y, setY] = useState()
+  const [z, setZ] = useState()
+
+  useEffect(() => {
+    if (groupRef.current) {
+      console.log(groupRef.current.getWorldPosition(new THREE.Vector3()))
+      const position = groupRef.current.getWorldPosition(new THREE.Vector3())
+      setX(position.x)
+      setY(position.y)
+      setZ(position.z)
+    }
+  }, [groupRef.current])
   return (
-    <group>
+    <group ref={groupRef} position={[0, 0, 0]}>
       {/* X axis */}
       <Cylinder
         args={[radius, radius, height, radialSegments]}
@@ -36,6 +55,12 @@ function Transform() {
       >
         <meshStandardMaterial color="blue" depthTest={true} />
       </Cylinder>
+
+      <Html position={[0, 0, 0]} wrapperClass="transform-label">
+        {x},&nbsp;
+        {y},&nbsp;
+        {z}
+      </Html>
     </group>
   )
 }

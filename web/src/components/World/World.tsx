@@ -1,4 +1,5 @@
 import { OrbitControls } from '@react-three/drei'
+import * as THREE from 'three'
 
 import Map from '../Map/Map'
 import Robot from '../Robot/Robot'
@@ -10,9 +11,8 @@ const World = () => {
       <OrbitControls enableDamping={true} makeDefault />
       <directionalLight position={[1, 2, 3]} intensity={1.5} />
       <ambientLight intensity={0.25} />
-      <Robot />
+      <Robot position={new THREE.Vector3(0.1, 0.2, 0)} />
       <Map />
-      <Transform />
     </>
   )
 }
