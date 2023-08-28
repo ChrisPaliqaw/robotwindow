@@ -19,7 +19,7 @@ function Transform() {
         position={[-height / 2.0, 0, 0]}
         rotation={[0.0, 0.0, Math.PI / -2.0]}
       >
-        <meshStandardMaterial color="red" />
+        <meshStandardMaterial color="red" depthTest={true} />
       </Cylinder>
       {/* Y axis */}
       <Cylinder
@@ -27,14 +27,14 @@ function Transform() {
         position={[0, 0, height / 2.0]}
         rotation-x={-Math.PI / 2.0}
       >
-        <meshStandardMaterial color="green" />
+        <meshStandardMaterial color="green" depthTest={true} />
       </Cylinder>
       {/* Z axis */}
       <Cylinder
         args={[radius, radius, height, radialSegments]}
         position={[0, height / 2.0, 0]}
       >
-        <meshStandardMaterial color="blue" />
+        <meshStandardMaterial color="blue" depthTest={true} />
       </Cylinder>
     </group>
   )
