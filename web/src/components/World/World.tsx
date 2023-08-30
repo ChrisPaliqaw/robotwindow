@@ -12,6 +12,7 @@ const World = () => {
       <directionalLight position={[1, 2, 3]} intensity={1.5} />
       <ambientLight intensity={0.25} />
       <Robot position={new THREE.Vector3(0.1, 0.2, 0)} />
+      <Transform name="odometry" />
       <Map />
     </>
   )

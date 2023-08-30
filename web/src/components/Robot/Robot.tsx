@@ -13,7 +13,7 @@ function Robot({ position }) {
     <mesh position={[position.x, position.z, position.y]}>
       <boxGeometry args={[length, height, width]} />
       <meshStandardMaterial color="dimgray" wireframe={false} />
-      <Transform />
+      <Transform name="viam_base" />
       <Image
         url="viam.png"
         rotation-x={Math.PI / -2}

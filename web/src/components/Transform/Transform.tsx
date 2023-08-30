@@ -10,12 +10,14 @@ import * as THREE from 'three'
  * See https://threejs.org/docs/index.html#api/en/math/Vector3.
  */
 
-function Transform() {
+function Transform({ name }) {
   const radius = 0.005
   const height = 0.3
   const radialSegments = 32
 
   const groupRef = useRef()
+
+  const yAxisRef = useRef()
 
   const [x, setX] = useState()
   const [y, setY] = useState()
@@ -42,6 +44,7 @@ function Transform() {
       </Cylinder>
       {/* Y axis */}
       <Cylinder
+        ref={yAxisRef}
         args={[radius, radius, height, radialSegments]}
         position={[0, 0, height / 2.0]}
         rotation-x={-Math.PI / 2.0}
@@ -56,7 +59,12 @@ function Transform() {
         <meshStandardMaterial color="blue" depthTest={true} />
       </Cylinder>
 
-      <Html position={[0, 0, 0]} wrapperClass="transform-label">
+      <Html
+        position={[0.0, 0.0, 0.0]}
+        wrapperClass="transform-label"
+        distanceFactor={undefined} // Don't scale the label with distance
+      >
+        {name}:&nbsp;
         {x},&nbsp;
         {y},&nbsp;
         {z}
