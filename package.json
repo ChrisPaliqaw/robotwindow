@@ -24,6 +24,7 @@
   "dependencies": {
     "@react-three/drei": "9.70",
     "@react-three/fiber": "8.13",
+    "leva": "0.9.35",
     "three": "0.153"
   }
 }

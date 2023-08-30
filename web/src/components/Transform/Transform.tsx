@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 
 import { Cylinder, Html } from '@react-three/drei'
 import * as THREE from 'three'
+import { useControls } from 'leva'
 
 /* Viam considers +X to be to the right, +Y to be forwards, and +Z to be up.
  * See https://docs.viam.com/services/frame-system/
@@ -10,7 +11,7 @@ import * as THREE from 'three'
  * See https://threejs.org/docs/index.html#api/en/math/Vector3.
  */
 
-function Transform({ name }) {
+function Transform({ name, visible }) {
   const radius = 0.005
   const height = 0.3
   const radialSegments = 32
@@ -33,14 +34,14 @@ function Transform({ name }) {
     }
   }, [groupRef.current])
   return (
-    <group ref={groupRef} position={[0, 0, 0]}>
+    <group ref={groupRef} position={[0, 0, 0]} >
       {/* X axis */}
       <Cylinder
         args={[radius, radius, height, radialSegments]}
         position={[-height / 2.0, 0, 0]}
         rotation={[0.0, 0.0, Math.PI / -2.0]}
       >
-        <meshStandardMaterial color="red" depthTest={true} />
+        <meshStandardMaterial color="red" depthTest={true} visible={visible}/>
       </Cylinder>
       {/* Y axis */}
       <Cylinder
@@ -49,20 +50,24 @@ function Transform({ name }) {
         position={[0, 0, height / 2.0]}
         rotation-x={-Math.PI / 2.0}
       >
-        <meshStandardMaterial color="green" depthTest={true} />
+        <meshStandardMaterial color="green" depthTest={true} visible={visible}/>
       </Cylinder>
       {/* Z axis */}
       <Cylinder
         args={[radius, radius, height, radialSegments]}
         position={[0, height / 2.0, 0]}
       >
-        <meshStandardMaterial color="blue" depthTest={true} />
+        <meshStandardMaterial color="blue" depthTest={true} visible={visible}/>
       </Cylinder>
 
       <Html
         position={[0.0, 0.0, 0.0]}
         wrapperClass="transform-label"
         distanceFactor={undefined} // Don't scale the label with distance
+        style={{
+          opacity: !visible ? 0 : 1,
+          transform: `scale(${!visible ? 0.5 : 1})`
+        }}
       >
         {name}:&nbsp;
         {x},&nbsp;
