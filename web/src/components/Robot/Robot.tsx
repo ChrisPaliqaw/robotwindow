@@ -30,7 +30,7 @@ function Robot({ position }) {
         scale={0.1}
         // 0.51 is slight above surface to make sure it's visible
         position-y={height * slightlyAboveSurface}
-        visible={visible}
+        visible={visible && !wireframe}
       />
     </mesh>
   )
