@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react'
 
 import { Cylinder, Html } from '@react-three/drei'
 import * as THREE from 'three'
-import { useControls } from 'leva'
 
 /* Viam considers +X to be to the right, +Y to be forwards, and +Z to be up.
  * See https://docs.viam.com/services/frame-system/
