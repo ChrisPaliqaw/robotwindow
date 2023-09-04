@@ -1,4 +1,4 @@
-import { Cone, PivotControls } from '@react-three/drei'
+import { Cone } from '@react-three/drei'
 import * as THREE from 'three'
 import { useControls } from 'leva'
 
@@ -12,7 +12,6 @@ const Marker = () => {
   const { position, rotation, color} = useControls("Marker",{
       position: {
         value: {x: 1, z: 1},
-        // joystick: 'invertX'
       },
       rotation: {
         value: 0,
@@ -30,11 +29,6 @@ const Marker = () => {
       >
         <arrowHelper args={[dir, origin, length, color, headLength, headWidth]} />
       </Cone>
-    // <mesh >
-    //   <boxGeometry args={[0.5, 0.5, 0.5]} />
-    //   <meshBasicMaterial color="yellow" />
-
-    // </mesh>
   )
 }
 
